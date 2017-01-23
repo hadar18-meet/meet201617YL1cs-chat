@@ -1,5 +1,10 @@
 #2016-2017 PERSONAL PROJECTS: TurtleChat!
 #WRITE YOUR NAME HERE!
+#hadar
+import turtle
+from turtle_chat_client import Client
+from turtle_chat_widgets import Button, TextInput
+
 
 #####################################################################################
 #                                   IMPORTS                                         #
