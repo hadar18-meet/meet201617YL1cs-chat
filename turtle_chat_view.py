@@ -42,7 +42,20 @@ from turtle_chat_widgets import Button, TextInput
 #   \r to your string.  Test it out at the Python shell for practice
 #####################################################################################
 #####################################################################################
+class  TextBox(TextInput):
+    def draw_box(self):
+        boxturtle = turtle.clone()
+        boxturtle.penup()
+        boxturtle.goto(130,-100)
+        boxturtle.pendown()
+        boxturtle.goto(-130,-100)
+        boxturtle.goto(-130,0)
+        boxturtle.goto(130,0)
+        boxturtle.goto(130,-100)
+    def write_msg(self):
+        self.writer.write(self.get_msg(), self.writer.clear())
 
+TextBox()    
 #####################################################################################
 #                                  SendButton                                       #
 #####################################################################################
