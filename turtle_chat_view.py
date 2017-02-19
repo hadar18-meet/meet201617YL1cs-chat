@@ -73,7 +73,12 @@ TextBox()
 #      you send messages and update message displays.
 #####################################################################################
 #####################################################################################
-
+class SendButton(Button):
+    def fun(self,x=None,y=None):
+        self.view.send_msg()
+    def __init__(self,view):
+        super(SendButton,self).__init__(pos=(0, 150))
+        self.view = view
 
 ##################################################################
 #                             View                               #
