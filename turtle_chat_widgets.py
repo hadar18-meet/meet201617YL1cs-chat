@@ -22,7 +22,6 @@ class Button(metaclass=ABCMeta):
         :param pos: tuple input, (x,y), specifying the location of the
                     turtle object.
         '''
-        print('test')
         if my_turtle is None :
             #If no turtle given, create new one
             self.turtle=turtle.clone()
