@@ -34,8 +34,7 @@ from turtle_chat_widgets import Button, TextInput
 #   self.writer.write(a_string_variable)
 #
 #   and you can erase that text using
-#
-#   self.writer.clear()
+##   self.writer.clear()
 #
 #3. If you want to make a newline character (i.e. go to the next line), just add
 #   \r to your string.  Test it out at the Python shell for practice
@@ -43,7 +42,9 @@ from turtle_chat_widgets import Button, TextInput
 #####################################################################################
 class  TextBox(TextInput):
     def draw_box(self):
+        turtle.hideturtle()
         boxturtle =turtle.clone()
+        boxturtle.hideturtle()
         boxturtle.penup()
         x = self.pos[0] - (self.width/2)
         y = self.pos[1]+ self.height/2
@@ -139,6 +140,7 @@ class View:
         #and write messages for each
         ###
         self.msgturtle = turtle.clone()
+        self.msgturtle.hideturtle()
         ###
         #Create a TextBox instance and a SendButton instance and
         #Store them inside of this instance
@@ -198,16 +200,22 @@ class View:
         #Then, call the display_msg method to update the display
         self.msg_queue.append(show_this_msg)
         self.display_msg()
+        
     def display_msg(self):
         '''
         This method should update the messages displayed in the screen.
         You can get the messages you want from self.msg_queue
         '''
+        #self.pos = 250
         self.msgturtle.clear()
         self.msgturtle.penup()
         self.msgturtle.goto(0,250)
         self.msgturtle.pendown()
         self.msgturtle.write(self.msg_queue[-1])
+        #self.pos -= 50
+        #if self.pos == 150:
+        #    self.pos = 250
+            
 View()
 ##############################################################
 ##############################################################
